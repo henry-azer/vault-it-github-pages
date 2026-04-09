@@ -1,0 +1,946 @@
+/* ============================================================
+   Vault It Design System
+   Shared CSS for GitHub Pages site
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   1. Design Tokens (Light Mode)
+   ---------------------------------------------------------- */
+:root {
+  --primary: #FF645C;
+  --secondary: #E8554E;
+  --bg: #FAFAFA;
+  --surface: #FFFFFF;
+  --text-primary: #1A1A2E;
+  --text-secondary: #6B7280;
+  --border: #E0E0E0;
+  --gradient-start: #FF645C;
+  --gradient-end: #E8554E;
+  --nav-bg: rgba(250, 250, 250, 0.85);
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 40px rgba(255, 100, 92, 0.1);
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+  --primary: #FF7A73;
+  --secondary: #FF9E99;
+  --bg: #16213E;
+  --surface: #1E2746;
+  --text-primary: #F8FAFC;
+  --text-secondary: #9CA3AF;
+  --border: #2E3A59;
+  --nav-bg: rgba(22, 33, 62, 0.85);
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 40px rgba(255, 122, 115, 0.1);
+}
+
+/* ----------------------------------------------------------
+   2. Reset & Base
+   ---------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-primary);
+  background-color: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--secondary);
+}
+
+/* ----------------------------------------------------------
+   3. Typography
+   ---------------------------------------------------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+/* ----------------------------------------------------------
+   4. Layout
+   ---------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.container--narrow {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: 6rem 0;
+}
+
+.section__header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 3rem;
+}
+.section__header p {
+  margin-top: 0.75rem;
+  font-size: 1.1rem;
+}
+
+/* ----------------------------------------------------------
+   5. Navigation Bar
+   ---------------------------------------------------------- */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: var(--nav-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  transition: background-color 0.3s ease;
+}
+
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.nav__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+.nav__brand img {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.nav__links a {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav__links a:hover {
+  color: var(--primary);
+}
+
+.nav__toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: var(--text-primary);
+}
+
+.nav__toggle svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: transparent;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--primary);
+  background-color: var(--surface);
+}
+
+.theme-toggle .icon-sun {
+  display: block;
+}
+
+.theme-toggle .icon-moon {
+  display: none;
+}
+
+[data-theme="dark"] .theme-toggle .icon-sun {
+  display: none;
+}
+
+[data-theme="dark"] .theme-toggle .icon-moon {
+  display: block;
+}
+
+/* ----------------------------------------------------------
+   6. Mobile Navigation
+   ---------------------------------------------------------- */
+.nav__mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background-color: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.nav__mobile-menu.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav__mobile-menu a {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.nav__mobile-menu a:hover {
+  color: var(--primary);
+}
+
+body.nav-open {
+  overflow: hidden;
+}
+
+/* ----------------------------------------------------------
+   7. Buttons
+   ---------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn--primary {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  color: #ffffff;
+  box-shadow: var(--shadow-lg);
+}
+
+.btn--primary:hover {
+  color: #ffffff;
+  box-shadow: 0 12px 44px rgba(255, 100, 92, 0.18);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.btn--outline:hover {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+/* ----------------------------------------------------------
+   8. Cards
+   ---------------------------------------------------------- */
+.card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.75rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ----------------------------------------------------------
+   9. Callout
+   ---------------------------------------------------------- */
+.callout {
+  background-color: var(--surface);
+  border-left: 3px solid var(--primary);
+  border-radius: 0 12px 12px 0;
+  padding: 1.25rem 1.5rem;
+}
+
+/* ----------------------------------------------------------
+   10. Footer
+   ---------------------------------------------------------- */
+.footer {
+  background-color: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 4rem 0 2rem;
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.footer__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.footer__brand img {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+}
+
+.footer__tagline {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.footer h4 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer__links a {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.footer__links a:hover {
+  color: var(--primary);
+}
+
+.footer__bottom {
+  text-align: center;
+  padding-top: 2rem;
+  margin-top: 3rem;
+  border-top: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+/* ----------------------------------------------------------
+   11. Phone Mockup
+   ---------------------------------------------------------- */
+.phone-frame {
+  position: relative;
+  width: 260px;
+  height: 520px;
+  border-radius: 32px;
+  border: 4px solid #000000;
+  background-color: #000000;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  flex-shrink: 0;
+}
+
+.phone-frame::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 24px;
+  background-color: #000000;
+  border-radius: 0 0 16px 16px;
+  z-index: 2;
+}
+
+.phone-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ----------------------------------------------------------
+   12. Carousel
+   ---------------------------------------------------------- */
+.carousel {
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel__track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel__slide {
+  flex: 0 0 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel__dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.carousel__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background-color: var(--border);
+  border: none;
+  cursor: pointer;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.carousel__dot.active {
+  width: 24px;
+  background-color: var(--primary);
+}
+
+/* ----------------------------------------------------------
+   13. Form Elements
+   ---------------------------------------------------------- */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.875rem 1.125rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background-color: var(--surface);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(255, 100, 92, 0.15);
+}
+
+.form-group textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.error-msg {
+  display: none;
+  color: #EF4444;
+  font-size: 0.8rem;
+  margin-top: 0.35rem;
+}
+
+.form-group.has-error input,
+.form-group.has-error textarea {
+  border-color: #EF4444;
+}
+
+.form-group.has-error .error-msg {
+  display: block;
+}
+
+/* ----------------------------------------------------------
+   14. Pills
+   ---------------------------------------------------------- */
+.pills {
+  display: flex;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 4px;
+  gap: 4px;
+}
+
+.pill {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 11px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.pill:hover {
+  color: var(--text-primary);
+}
+
+.pill.active {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  color: #ffffff;
+}
+
+/* ----------------------------------------------------------
+   15. Star Rating
+   ---------------------------------------------------------- */
+.star-rating {
+  display: flex;
+  direction: rtl;
+  gap: 0.15rem;
+}
+
+.star-rating input {
+  display: none;
+}
+
+.star-rating label {
+  font-size: 2rem;
+  color: var(--border);
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.star-rating label::before {
+  content: "\2605";
+}
+
+.star-rating input:checked ~ label,
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  color: #FBBF24;
+}
+
+/* ----------------------------------------------------------
+   16. Toast
+   ---------------------------------------------------------- */
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(120%);
+  background-color: #22C55E;
+  color: #ffffff;
+  padding: 0.85rem 1.75rem;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 8px 30px rgba(34, 197, 94, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.35s ease, opacity 0.35s ease, visibility 0.35s ease;
+  z-index: 2000;
+  white-space: nowrap;
+}
+
+.toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ----------------------------------------------------------
+   17. Scroll Animations
+   ---------------------------------------------------------- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ----------------------------------------------------------
+   18. Store Badges
+   ---------------------------------------------------------- */
+.store-badges {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.store-badges img {
+  height: 48px;
+  width: auto;
+}
+
+/* ----------------------------------------------------------
+   19. Hero Background Mesh
+   ---------------------------------------------------------- */
+.hero-bg {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(255,100,92,0.05) 0%, rgba(232,85,78,0.08) 50%, rgba(255,158,153,0.05) 100%);
+}
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 40%, rgba(255,100,92,0.12) 0%, transparent 50%),
+              radial-gradient(circle at 70% 60%, rgba(232,85,78,0.08) 0%, transparent 50%);
+  animation: meshFloat 20s ease-in-out infinite;
+  z-index: 0;
+}
+@keyframes meshFloat {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(2%, -2%) rotate(1deg); }
+  66% { transform: translate(-1%, 1%) rotate(-1deg); }
+}
+.hero-bg > * { position: relative; z-index: 1; }
+
+/* ----------------------------------------------------------
+   20. Feature Card Enhancements
+   ---------------------------------------------------------- */
+.features-grid .card {
+  padding: 2.25rem 1.75rem;
+}
+.features-grid .card .icon-wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(255,100,92,0.1), rgba(232,85,78,0.1));
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+[data-theme="dark"] .features-grid .card .icon-wrap {
+  background: linear-gradient(135deg, rgba(255,122,115,0.15), rgba(255,158,153,0.15));
+}
+.features-grid .card svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* ----------------------------------------------------------
+   21. Dark Mode Phone Glow
+   ---------------------------------------------------------- */
+[data-theme="dark"] .phone-frame {
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 40px rgba(255,100,92,0.15);
+}
+
+/* ----------------------------------------------------------
+   22. Carousel Slide Spacing
+   ---------------------------------------------------------- */
+.carousel__slide {
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+/* ----------------------------------------------------------
+   23. CTA Section Enhancements
+   ---------------------------------------------------------- */
+.cta-section {
+  position: relative;
+  overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+}
+.cta-section::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.03);
+}
+.cta-section > * { position: relative; z-index: 1; }
+.cta-section h2 { font-size: 2.25rem; margin-bottom: 1rem; }
+.cta-section p { font-size: 1.15rem; }
+
+/* ----------------------------------------------------------
+   24. Nav Active Indicator
+   ---------------------------------------------------------- */
+.nav__links a.active {
+  color: var(--primary);
+}
+
+/* ----------------------------------------------------------
+   25. Privacy Policy Content Spacing
+   ---------------------------------------------------------- */
+.policy-content h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.policy-content p {
+  margin-bottom: 1rem;
+}
+.policy-content ul {
+  margin: 0.75rem 0 1.25rem 1.5rem;
+  list-style: disc;
+}
+.policy-content li {
+  margin-bottom: 0.4rem;
+  color: var(--text-secondary);
+}
+.policy-content .callout {
+  margin: 1.5rem 0;
+}
+.policy-content .callout h2 {
+  margin-top: 0;
+  border-bottom: none;
+}
+
+/* ----------------------------------------------------------
+   26. Support Form Spacing
+   ---------------------------------------------------------- */
+.support-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.support-header h1 { margin-bottom: 0.75rem; }
+.pills {
+  margin-bottom: 2.5rem;
+}
+
+/* ----------------------------------------------------------
+   27. Smooth Theme Transitions
+   ---------------------------------------------------------- */
+body, .nav, .card, .footer, .callout, .pills, .pill,
+.form-group input, .form-group textarea, .phone-frame {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ----------------------------------------------------------
+   28. Content Link Hover Effects
+   ---------------------------------------------------------- */
+.policy-content a, .footer__links a {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+.policy-content a:hover, .footer__links a:hover {
+  border-bottom-color: var(--primary);
+}
+
+/* ----------------------------------------------------------
+   Responsive — Tablet (max-width: 1024px)
+   ---------------------------------------------------------- */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  h2 {
+    font-size: 1.625rem;
+  }
+
+  .section {
+    padding: 3.5rem 0;
+  }
+
+  .footer__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ----------------------------------------------------------
+   Responsive — Mobile (max-width: 768px)
+   ---------------------------------------------------------- */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.875rem;
+  }
+
+  h2 {
+    font-size: 1.375rem;
+  }
+
+  .section {
+    padding: 2.5rem 0;
+  }
+
+  /* Nav: show toggle, hide desktop links */
+  .nav__toggle {
+    display: flex;
+  }
+
+  .nav__links {
+    display: none;
+  }
+
+  /* Single column layouts */
+  .footer__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  /* Smaller phone mockup */
+  .phone-frame {
+    width: 200px;
+    height: 400px;
+    border-radius: 24px;
+  }
+
+  .phone-frame::before {
+    width: 80px;
+    height: 20px;
+    border-radius: 0 0 12px 12px;
+  }
+
+  /* Pills stack vertically */
+  .pills {
+    flex-direction: column;
+  }
+
+  /* Store badges center on small screens */
+  .store-badges {
+    justify-content: center;
+  }
+}

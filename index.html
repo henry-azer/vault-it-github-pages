@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vault It — Secure Offline Password Manager</title>
+  <meta name="description" content="Your completely offline password manager. All data stays on your device with AES-256 encryption. No servers, no cloud, no tracking.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Vault It — Secure Offline Password Manager">
+  <meta property="og:description" content="Your completely offline password manager. All data stays on your device with AES-256 encryption. No servers, no cloud, no tracking.">
+  <meta property="og:image" content="assets/logo-dark.png">
+  <meta property="og:url" content="https://henry-azer.github.io/vault-it-github-pages/">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    .hero { display: flex; align-items: center; gap: 4rem; padding-top: 8rem; }
+    .hero__content { flex: 1; }
+    .hero__content h1 { margin-bottom: 1.25rem; }
+    .hero__content > p { font-size: 1.15rem; margin-bottom: 2rem; }
+    .hero__visual { flex: 0 0 300px; }
+    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
+    .features-grid .card { text-align: center; }
+    .features-grid .card svg { color: var(--primary); }
+    .features-grid .card h3 { margin-bottom: 0.5rem; color: var(--text-primary); }
+    .screenshots-section { background: linear-gradient(180deg, var(--bg), var(--surface)); }
+    .screenshots-section h2 { text-align: center; margin-bottom: 2rem; }
+    .cta-section { background: linear-gradient(135deg, #FF645C, #E8554E); color: #fff; text-align: center; }
+    .cta-section h2 { color: #fff; }
+    .cta-section p { color: rgba(255,255,255,0.85); margin-bottom: 2rem; }
+    .cta-section .store-badges { justify-content: center; }
+    @media (max-width: 768px) {
+      .hero { flex-direction: column; text-align: center; padding-top: 6rem; gap: 2rem; }
+      .hero__visual { flex: none; width: 100%; display: flex; justify-content: center; }
+      .hero .store-badges { justify-content: center; }
+      .features-grid { grid-template-columns: 1fr; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       Nav Bar
+       ============================================================ -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__brand">
+        <img src="assets/logo-light.png" alt="Vault It" data-logo>
+        <span>Vault It</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#screenshots">Screenshots</a></li>
+        <li><a href="#download">Download</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="privacy-policy.html">Privacy</a></li>
+        <li>
+          <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </li>
+      </ul>
+      <button class="nav__toggle" onclick="toggleMobileNav()" aria-label="Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="nav__mobile-menu">
+    <a href="#features" onclick="closeMobileNav()">Features</a>
+    <a href="#screenshots" onclick="closeMobileNav()">Screenshots</a>
+    <a href="#download" onclick="closeMobileNav()">Download</a>
+    <a href="support.html" onclick="closeMobileNav()">Support</a>
+    <a href="privacy-policy.html" onclick="closeMobileNav()">Privacy</a>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme" style="align-self: flex-start;">
+      <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+
+  <!-- ============================================================
+       Hero Section
+       ============================================================ -->
+  <section class="section hero-bg">
+    <div class="container hero">
+      <div class="hero__content">
+        <h1>Your data. Your device. Your control.</h1>
+        <p>A completely offline password manager with AES-256 encryption. No servers, no cloud, no tracking. Just your passwords, locked on your device, invisible to everyone else.</p>
+        <div class="store-badges">
+          <a href="#" target="_blank" rel="noopener noreferrer">
+            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play">
+          </a>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <div class="phone-frame">
+          <img src="assets/screenshots/dark/1.png" alt="Vault It Dashboard">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       Features Section
+       ============================================================ -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section__header">
+        <h2>One vault. Every password. Zero compromise.</h2>
+        <p>Built for people who take their security seriously — and their privacy even more.</p>
+      </div>
+      <div class="features-grid">
+
+        <!-- 1. Military-Grade Encryption -->
+        <div class="card fade-in">
+          <div class="icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+          </div>
+          <h3>Encrypted. Local. Yours.</h3>
+          <p>AES-256 encryption, Face ID, and zero cloud dependency. Your passwords never leave your device — we can't see them because they're never sent anywhere.</p>
+        </div>
+
+        <!-- 2. Password Generator -->
+        <div class="card fade-in">
+          <div class="icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+          </div>
+          <h3>Strong Password Generator</h3>
+          <p>Generate unbreakable passwords with customizable length, character sets, and exclusion rules. Real-time strength indicator shows exactly how secure you are.</p>
+        </div>
+
+        <!-- 3. Organized Categories -->
+        <div class="card fade-in">
+          <div class="icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+            </svg>
+          </div>
+          <h3>Smart Categories</h3>
+          <p>Color-coded categories keep your vault organized. Social media, banking, work, personal — find any password instantly with search and filters.</p>
+        </div>
+
+        <!-- 4. Biometric Auth -->
+        <div class="card fade-in">
+          <div class="icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 11c0-1.1-.9-2-2-2s-2 .9-2 2 2 4 2 4"/>
+              <path d="M14 13c0 1.1-.9 2-2 2"/>
+              <path d="M6 12c0-3.3 2.7-6 6-6s6 2.7 6 6c0 2.1-.6 3.9-1 5"/>
+              <path d="M9 17c-.5-1-.8-2.2-.8-3"/>
+              <path d="M3.6 15c-.2-.7-.4-1.6-.4-3 0-4.4 3.6-8 8-8"/>
+              <path d="M20.4 15c.2-.7.4-1.6.4-3 0-4.4-3.6-8-8-8"/>
+              <path d="M2 12c0-5.5 4.5-10 10-10s10 4.5 10 10c0 2.4-.5 4.5-1.2 6"/>
+            </svg>
+          </div>
+          <h3>Biometric Unlock</h3>
+          <p>Face ID, Touch ID, or fingerprint — unlock your vault in a heartbeat. Master password as backup, biometric for speed.</p>
+        </div>
+
+        <!-- 5. Encrypted Backup -->
+        <div class="card fade-in">
+          <div class="icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
+            </svg>
+          </div>
+          <h3>Encrypted Backup</h3>
+          <p>Export encrypted backups or sync via iCloud. Your data is AES-256 encrypted before it leaves your phone — stored in your own iCloud, not ours.</p>
+        </div>
+
+        <!-- 6. Bilingual -->
+        <div class="card fade-in">
+          <div class="icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+          </div>
+          <h3>English & Arabic</h3>
+          <p>Fully localized in both languages with native right-to-left support. Feels like home, whichever language you speak.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       Screenshots Section
+       ============================================================ -->
+  <section class="screenshots-section section" id="screenshots">
+    <div class="container">
+      <div class="section__header">
+        <h2>Designed to be looked at twice.</h2>
+        <p>Light and dark themes, crafted for the details that matter.</p>
+      </div>
+      <div class="carousel">
+        <div class="carousel__track">
+
+          <!-- Slide 1: Vault -->
+          <div class="carousel__slide">
+            <div class="phone-frame">
+              <img src="assets/screenshots/dark/1.png" alt="Vault — Dark Mode">
+            </div>
+            <div class="phone-frame">
+              <img src="assets/screenshots/light/1.png" alt="Vault — Light Mode">
+            </div>
+          </div>
+
+          <!-- Slide 2: Password Generator -->
+          <div class="carousel__slide">
+            <div class="phone-frame">
+              <img src="assets/screenshots/dark/5.png" alt="Password Generator — Dark Mode">
+            </div>
+            <div class="phone-frame">
+              <img src="assets/screenshots/light/5.png" alt="Password Generator — Light Mode">
+            </div>
+          </div>
+
+          <!-- Slide 3: Categories -->
+          <div class="carousel__slide">
+            <div class="phone-frame">
+              <img src="assets/screenshots/dark/7.png" alt="Categories — Dark Mode">
+            </div>
+            <div class="phone-frame">
+              <img src="assets/screenshots/light/7.png" alt="Categories — Light Mode">
+            </div>
+          </div>
+
+          <!-- Slide 4: Settings -->
+          <div class="carousel__slide">
+            <div class="phone-frame">
+              <img src="assets/screenshots/dark/10.png" alt="Settings — Dark Mode">
+            </div>
+            <div class="phone-frame">
+              <img src="assets/screenshots/light/10.png" alt="Settings — Light Mode">
+            </div>
+          </div>
+
+        </div>
+        <div class="carousel__dots">
+          <button class="carousel__dot" aria-label="Slide 1"></button>
+          <button class="carousel__dot" aria-label="Slide 2"></button>
+          <button class="carousel__dot" aria-label="Slide 3"></button>
+          <button class="carousel__dot" aria-label="Slide 4"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       Download CTA Section
+       ============================================================ -->
+  <section class="cta-section section" id="download">
+    <div class="container">
+      <h2>Your passwords deserve better than a sticky note.</h2>
+      <p>Free to download. No account required. Start in seconds.</p>
+      <div class="store-badges">
+        <a href="#" target="_blank" rel="noopener noreferrer">
+          <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       Footer
+       ============================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+
+        <!-- Col 1: Brand -->
+        <div>
+          <div class="footer__brand">
+            <img src="assets/logo-light.png" alt="Vault It" data-logo>
+            <span>Vault It</span>
+          </div>
+          <p class="footer__tagline">Secure offline password manager</p>
+        </div>
+
+        <!-- Col 2: Links -->
+        <div>
+          <h4>Links</h4>
+          <ul class="footer__links">
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="support.html">Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Developer -->
+        <div>
+          <h4>Developer</h4>
+          <ul class="footer__links">
+            <li>Henry Azer</li>
+            <li><a href="https://www.linkedin.com/in/henry-azer" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://github.com/henry-azer" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Vault It. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

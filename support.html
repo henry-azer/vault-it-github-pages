@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support — Vault It | Secure Offline Password Manager</title>
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- Nav Bar -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__brand">
+      <img src="assets/logo-light.png" alt="Vault It" data-logo>
+      <span>Vault It</span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="support.html" style="color: var(--primary);">Support</a></li>
+      <li><a href="privacy-policy.html">Privacy</a></li>
+      <li>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </li>
+    </ul>
+    <button class="nav__toggle" onclick="toggleMobileNav()" aria-label="Menu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+<div class="nav__mobile-menu">
+  <a href="index.html" onclick="closeMobileNav()">Home</a>
+  <a href="support.html" onclick="closeMobileNav()">Support</a>
+  <a href="privacy-policy.html" onclick="closeMobileNav()">Privacy</a>
+</div>
+
+<!-- Main Content -->
+<main>
+  <section class="section" style="padding-top: 7rem;">
+    <div class="container--narrow">
+      <div class="support-header">
+        <h1>Get in Touch</h1>
+        <p>Have a question, found a bug, or want to share feedback?</p>
+      </div>
+
+      <!-- Type Selector Pills -->
+      <div class="pills">
+        <button class="pill active" data-type="help">Help &amp; Support</button>
+        <button class="pill" data-type="bug">Bug Report</button>
+        <button class="pill" data-type="feedback">App Feedback</button>
+      </div>
+
+      <!-- Support Form -->
+      <form class="support-form" id="support-form">
+
+        <!-- Help Section (visible by default) -->
+        <div class="form-section" data-section="help">
+          <div class="form-group">
+            <label for="help-name">Name</label>
+            <input type="text" id="help-name" data-field="name" placeholder="Your name" required>
+            <p class="error-msg">Please enter your name</p>
+          </div>
+          <div class="form-group">
+            <label for="help-subject">Subject</label>
+            <input type="text" id="help-subject" data-field="subject" placeholder="What do you need help with?" required>
+            <p class="error-msg">Please enter a subject</p>
+          </div>
+          <div class="form-group">
+            <label for="help-desc">Description</label>
+            <textarea id="help-desc" data-field="description" placeholder="Describe your issue or question..." required></textarea>
+            <p class="error-msg">Please enter a description</p>
+          </div>
+        </div>
+
+        <!-- Bug Section (hidden) -->
+        <div class="form-section" data-section="bug" style="display: none;">
+          <div class="form-group">
+            <label for="bug-name">Name</label>
+            <input type="text" id="bug-name" data-field="name" placeholder="Your name" required>
+            <p class="error-msg">Please enter your name</p>
+          </div>
+          <div class="form-group">
+            <label for="bug-subject">Subject</label>
+            <input type="text" id="bug-subject" data-field="subject" placeholder="Brief description of the bug" required>
+            <p class="error-msg">Please enter a subject</p>
+          </div>
+          <div class="form-group">
+            <label for="bug-desc">Description</label>
+            <textarea id="bug-desc" data-field="description" placeholder="Steps to reproduce, expected vs actual behavior..." required></textarea>
+            <p class="error-msg">Please enter a description</p>
+          </div>
+        </div>
+
+        <!-- Feedback Section (hidden) -->
+        <div class="form-section" data-section="feedback" style="display: none;">
+          <div class="form-group">
+            <label for="fb-name">Name</label>
+            <input type="text" id="fb-name" data-field="name" placeholder="Your name" required>
+            <p class="error-msg">Please enter your name</p>
+          </div>
+          <div class="form-group">
+            <label>Rating</label>
+            <div class="star-rating">
+              <input type="radio" id="star5" name="rating" value="5"><label for="star5">&#9733;</label>
+              <input type="radio" id="star4" name="rating" value="4"><label for="star4">&#9733;</label>
+              <input type="radio" id="star3" name="rating" value="3"><label for="star3">&#9733;</label>
+              <input type="radio" id="star2" name="rating" value="2"><label for="star2">&#9733;</label>
+              <input type="radio" id="star1" name="rating" value="1"><label for="star1">&#9733;</label>
+            </div>
+            <p class="error-msg">Please select a rating</p>
+          </div>
+          <div class="form-group">
+            <label for="fb-desc">Description</label>
+            <textarea id="fb-desc" data-field="description" placeholder="Tell us what you think..." required></textarea>
+            <p class="error-msg">Please enter a description</p>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn--primary" style="width: 100%; margin-top: 0.5rem;">Send Message</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__col">
+        <a href="index.html" class="footer__brand">
+          <img src="assets/logo-light.png" alt="Vault It" data-logo>
+          <span>Vault It</span>
+        </a>
+        <p class="footer__tagline">Your passwords, your device, your control.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Links</h4>
+        <ul>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="support.html">Support</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Developer</h4>
+        <ul>
+          <li><span>Henry Azer</span></li>
+          <li><a href="https://www.linkedin.com/in/henry-azer" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/henry-azer" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 Vault It. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

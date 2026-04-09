@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Vault It | Secure Offline Password Manager</title>
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- Nav Bar -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__brand">
+      <img src="assets/logo-light.png" alt="Vault It" data-logo>
+      <span>Vault It</span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="privacy-policy.html" style="color: var(--primary);">Privacy</a></li>
+      <li>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </li>
+    </ul>
+    <button class="nav__toggle" onclick="toggleMobileNav()" aria-label="Menu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+<div class="nav__mobile-menu">
+  <a href="index.html" onclick="closeMobileNav()">Home</a>
+  <a href="support.html" onclick="closeMobileNav()">Support</a>
+  <a href="privacy-policy.html" onclick="closeMobileNav()">Privacy</a>
+</div>
+
+<!-- Main Content -->
+<main>
+  <section class="section" style="padding-top: 7rem;">
+    <div class="container--narrow policy-content">
+
+      <h1 style="margin-bottom: 0.5rem;">Vault It Privacy Policy</h1>
+      <p style="color: var(--text-secondary); margin-bottom: 2.5rem;">Last Updated: April 2026</p>
+
+      <!-- Section 1 -->
+      <h2>1. Overview</h2>
+      <p>Vault It is a privacy-first offline password manager. Your passwords and credentials are stored locally on your device and are never sent to our servers. We do not operate any servers or databases that store your personal or credential information. This policy explains what data the app handles and what limited information may be shared with third-party services.</p>
+
+      <!-- Section 2 -->
+      <h2>2. Local Data Storage</h2>
+      <p>All your passwords, account credentials, categories, and settings are stored exclusively on your device using an encrypted SQLite database with AES-256 encryption. This data is completely isolated and private. We have no ability to access, read, or retrieve it.</p>
+
+      <!-- Section 3 -->
+      <h2>3. Master Password</h2>
+      <p>Your master password is the sole key to your vault. It is processed locally on your device and is never transmitted, stored on servers, or accessible to anyone other than you. If you lose your master password, we cannot recover it or your data.</p>
+
+      <!-- Section 4 -->
+      <h2>4. Optional Account &amp; Authentication (Supabase)</h2>
+      <p>You may optionally create an account to enable cloud features. If you do, the following data is sent to our authentication provider (Supabase):</p>
+      <ul>
+        <li>Email address and password (encrypted in transit)</li>
+        <li>Profile information you provide (display name, gender, birthday, phone number)</li>
+        <li>Authentication tokens for session management</li>
+      </ul>
+      <p>This data is processed by Supabase under their privacy policy. You can use Vault It fully without creating an account.</p>
+
+      <!-- Section 5 -->
+      <h2>5. iCloud Sync (iOS Only)</h2>
+      <p>If you enable iCloud sync on iOS, your data is encrypted and stored in your personal iCloud account. This data:</p>
+      <ul>
+        <li>Is encrypted using AES-256 before leaving your device</li>
+        <li>Is stored in YOUR iCloud storage, not our servers</li>
+        <li>Is never accessible to us or any third party</li>
+        <li>Can be disabled at any time in Settings</li>
+      </ul>
+
+      <!-- Section 6 -->
+      <div class="callout">
+        <h2>6. Advertising (Google AdMob)</h2>
+        <p>The free version displays ads served by Google AdMob. Google may collect the following for ad personalization and measurement:</p>
+        <ul>
+          <li>Device advertising identifier</li>
+          <li>IP address</li>
+          <li>General device information</li>
+          <li>Ad interaction data</li>
+        </ul>
+        <p>This data is governed by Google's privacy policy. The app participates in Apple's SKAdNetwork for aggregated ad attribution. You can permanently remove all ads and associated data collection by purchasing the "Remove Ads" in-app purchase.</p>
+      </div>
+
+      <!-- Section 7 -->
+      <h2>7. In-App Purchases</h2>
+      <p>Purchase transactions are processed entirely by the Apple App Store or Google Play Store. We do not receive or store your payment information. We only receive confirmation of whether the purchase was completed.</p>
+
+      <!-- Section 8 -->
+      <h2>8. Feedback &amp; Support</h2>
+      <p>If you submit a help request, bug report, or app rating through the in-app forms, the information you provide (name, subject, description, rating) is sent to Google Forms. This submission is voluntary and contains only the data you choose to enter.</p>
+
+      <!-- Section 9 -->
+      <h2>9. Favicon Service</h2>
+      <p>When displaying account entries with associated websites, the app may request website icons from Google's favicon service. This sends the website domain name to Google. No personal data is included.</p>
+
+      <!-- Section 10 -->
+      <div class="callout">
+        <h2>10. No Tracking or Analytics</h2>
+        <p>We do not use any analytics, crash reporting, or telemetry services. No Firebase Analytics, no Crashlytics, no Sentry, no third-party tracking SDKs. Your usage behavior within the app is not monitored or recorded by us.</p>
+      </div>
+
+      <!-- Section 11 -->
+      <h2>11. Biometric Authentication</h2>
+      <p>If you enable Face ID, Touch ID, or fingerprint authentication, all biometric processing is handled entirely by your device's operating system. The app never accesses, stores, or transmits raw biometric data. If you enable biometric login, your master password is stored in the device's secure keychain (iOS Keychain / Android Keystore).</p>
+
+      <!-- Section 12 -->
+      <h2>12. Encrypted Backup Files</h2>
+      <p>When you export a backup:</p>
+      <ul>
+        <li>The file is encrypted using AES-256-GCM with PBKDF2 key derivation and HMAC-SHA256 integrity verification</li>
+        <li>The encrypted file is saved to the location you choose</li>
+        <li>We never receive, access, or store your backup files</li>
+        <li>You are responsible for securing your backup files</li>
+      </ul>
+
+      <!-- Section 13 -->
+      <h2>13. Data Stored on Device</h2>
+      <p>The app stores the following locally:</p>
+      <ul>
+        <li>SQLite database: passwords, account credentials, categories, password history</li>
+        <li>Secure storage (OS keychain): master password and biometric credentials</li>
+        <li>Shared preferences: app settings, theme, language, sync preferences</li>
+      </ul>
+      <p>None of this data is transmitted to us.</p>
+
+      <!-- Section 14 -->
+      <h2>14. Your Rights</h2>
+      <ul>
+        <li>You have complete control over your data at all times</li>
+        <li>You can export all your data via encrypted backup</li>
+        <li>You can delete all data from Settings or by uninstalling the app</li>
+        <li>If you created an account, you can request deletion by contacting us</li>
+        <li>No data remains on our systems after deletion (we have no systems storing your data)</li>
+      </ul>
+
+      <!-- Section 15 -->
+      <h2>15. Children's Privacy</h2>
+      <p>Vault It is not directed at children under 13. We do not knowingly collect personal information from children.</p>
+
+      <!-- Section 16 -->
+      <h2>16. Changes to This Policy</h2>
+      <p>We may update this policy from time to time. Changes will be reflected in the "Last Updated" date and communicated through app updates.</p>
+
+      <!-- Section 17 -->
+      <h2>17. Contact</h2>
+      <p>For privacy questions or concerns:</p>
+      <p>Email: <a href="mailto:henry.azer@outlook.com">henry.azer@outlook.com</a></p>
+
+      <p>By using Vault It, you acknowledge and agree to this privacy policy.</p>
+
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__col">
+        <a href="index.html" class="footer__brand">
+          <img src="assets/logo-light.png" alt="Vault It" data-logo>
+          <span>Vault It</span>
+        </a>
+        <p>Your passwords, your device, your control.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Links</h4>
+        <ul>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="support.html">Support</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Developer</h4>
+        <p>Henry Azer</p>
+        <ul>
+          <li><a href="https://linkedin.com/in/henry-azer" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/henry-azer" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 Vault It. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
